@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar viaje</title>
+</head>
+<body>
+    <h1>Editar viaje</h1>
+
+    <form action="/actualizar_viaje/{{ viaje.id }}" method="POST">
+        <p>Destino: <input type="text" name="destino" value="{{ viaje.destino }}" required></p>
+        <p>Fecha de inicio: <input type="date" name="fecha_inicio" value="{{ viaje.fecha_inicio.strftime('%Y-%m-%d') if viaje.fecha_inicio else '' }}" required></p>
+        <p>Fecha de fin: <input type="date" name="fecha_fin" value="{{ viaje.fecha_fin.strftime('%Y-%m-%d') if viaje.fecha_fin else '' }}" required></p>
+        <p>Itinerario: <textarea name="itinerario" maxlength="40" required>{{ viaje.itinerario }}</textarea></p>
+        <button type="submit">Guardar cambios</button>
+    </form>
+
+    <a href="/lista">Volver a la lista</a>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Viaje</title>
+</head>
+<body>
+    <h1>Nuevo Viaje</h1>
+
+    <a href="/lista">Inicio</a>
+    <a href="/cerrar_sesion">Cerrar Sesión</a>
+
+    {% with mensajes = get_flashed_messages(with_categories=true) %}
+        {% if mensajes %}
+            {% for categoria, mensaje in mensajes %}
+                <p>{{ mensaje }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form action="/crear_viaje" method="POST">
+        <p>
+            Destino:
+            <input type="text" name="destino" required>
+        </p>
+
+        <p>
+            Fecha de inicio:
+            <input type="date" name="fecha_inicio" required>
+        </p>
+
+        <p>
+            Fecha de fin:
+            <input type="date" name="fecha_fin" required>
+        </p>
+
+        <p>
+            Itinerario:
+            <textarea name="itinerario" maxlength="40"
+                      required></textarea>
+        </p>
+
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>
