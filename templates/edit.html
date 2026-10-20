@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Editar Usuario</h1>
+    <form action="/usuarios/actualizar/{{ usuario.id }}" method="POST">
+        <p>destino: <input type="text" name="destino" value="{{ usuario.destino }}" required></p>
+        <p>fecha inicio <input type="datetime" name="fecha_inicio" value="{{ usuario.fecha_inicio }}" required></p>
+        <p>fecha fin <input type="datetime" name="fecha_fin" value="{{ usuario.fecha_fin }}" required></p>
+        <p>Itinerario <textarea name="itinerario" rows="4" cols="50"></textarea></p>
+        <p><input type="submit" value="Guardar"></p>
+    </form>
+</body>
+</html>

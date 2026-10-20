@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ viaje.destino }}</h1>
+    <p>organizador {{usuario.id}} {{ usuario.nombre }}</p>
+    <p>fecha inicio: {{ usuario.created_at }}</p>
+    <p>fecha fin: {{ usuario.updated_at }}</p>
+    <p>itinerario: {{  }}</p>
+    <br>
+    <a href="/usuarios/editar/{{ usuario.id }}">Editar</a> |
+    <a href="/usuarios">Volver a la lista</a>
+</body>
+</html>

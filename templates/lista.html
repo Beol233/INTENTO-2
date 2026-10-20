@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>Bienvenid@</h1>
+    <table border="1">
+        <tr>
+            <th>destino</th>
+            <th>organizacion</th>
+            <th>fecha inicio</th>
+            <th>fecha fin</th>
+            <th>Acciones</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.destino }}</td>
+            <td>{{ usuario.organizacion }}</td>
+            <td>{{ usuario.fecha_inicio }}</td>
+            <td>{{ usuario.fecha_fin }}</td>
+            <td>
+                <a href="/usuarios/{{ usuario.id }}">Ver</a> 
+                <a href="/usuarios/editar/{{ usuario.id }}">Editar</a> 
+                <a href="/usuarios/eliminar/{{ usuario.id }}" onclick="return confirm('eliminar')">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+</body>
+</html>
